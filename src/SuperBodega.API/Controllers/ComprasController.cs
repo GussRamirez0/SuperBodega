@@ -5,6 +5,22 @@ using SuperBodega.Infrastructure.Data;
 
 namespace SuperBodega.API.Controllers;
 
+public class DetalleCompraDto
+{
+    public int ProductoId { get; set; }
+    public int Cantidad { get; set; }
+    public decimal PrecioUnitario { get; set; }
+    public decimal Subtotal { get; set; }
+}
+
+public class CompraDto
+{
+    public int ProveedorId { get; set; }
+    public string NumeroFactura { get; set; } = string.Empty;
+    public string Notas { get; set; } = string.Empty;
+    public List<DetalleCompraDto> Detalles { get; set; } = new();
+}
+
 [ApiController]
 [Route("api/[controller]")]
 public class ComprasController : ControllerBase
@@ -41,22 +57,41 @@ public class ComprasController : ControllerBase
             .ToListAsync());
 
     [HttpPost]
-    public async Task<IActionResult> Create(Compra compra)
+    public async Task<IActionResult> Create([FromBody] CompraDto dto)
     {
         using var transaction = await _context.Database.BeginTransactionAsync();
         try
         {
-            compra.Fecha = DateTime.UtcNow;
-            compra.Total = compra.Detalles.Sum(d => d.Cantidad * d.PrecioUnitario);
-
-            foreach (var detalle in compra.Detalles)
+            var compra = new Compra
             {
-                detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
-                var producto = await _context.Productos.FindAsync(detalle.ProductoId);
-                if (producto == null) return BadRequest($"Producto {detalle.ProductoId} no encontrado");
-                producto.Stock += detalle.Cantidad;
+                ProveedorId = dto.ProveedorId,
+                NumeroFactura = dto.NumeroFactura,
+                Notas = dto.Notas,
+                Fecha = DateTime.UtcNow,
+                Estado = "Recibida"
+            };
+
+            decimal total = 0;
+            var detalles = new List<DetalleCompra>();
+
+            foreach (var item in dto.Detalles)
+            {
+                var producto = await _context.Productos.FindAsync(item.ProductoId);
+                if (producto == null) return BadRequest($"Producto {item.ProductoId} no encontrado");
+                var subtotal = item.Cantidad * item.PrecioUnitario;
+                total += subtotal;
+                producto.Stock += item.Cantidad;
+                detalles.Add(new DetalleCompra
+                {
+                    ProductoId = item.ProductoId,
+                    Cantidad = item.Cantidad,
+                    PrecioUnitario = item.PrecioUnitario,
+                    Subtotal = subtotal
+                });
             }
 
+            compra.Total = total;
+            compra.Detalles = detalles;
             _context.Compras.Add(compra);
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
@@ -70,10 +105,13 @@ public class ComprasController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Compra compra)
+    public async Task<IActionResult> Update(int id, [FromBody] CompraDto dto)
     {
-        if (id != compra.Id) return BadRequest();
-        _context.Entry(compra).State = EntityState.Modified;
+        var compra = await _context.Compras.FindAsync(id);
+        if (compra == null) return NotFound();
+        compra.ProveedorId = dto.ProveedorId;
+        compra.NumeroFactura = dto.NumeroFactura;
+        compra.Notas = dto.Notas;
         await _context.SaveChangesAsync();
         return NoContent();
     }

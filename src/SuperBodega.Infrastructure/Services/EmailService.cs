@@ -31,7 +31,7 @@ public class EmailService
 
         var mensaje = new EmailMessage
         {
-            From = "SuperBodega <noreply@superbodega.com>",
+            From = "SuperBodega <onboarding@resend.dev>",
             To = { destinatario },
             Subject = asunto,
             HtmlBody = cuerpo
