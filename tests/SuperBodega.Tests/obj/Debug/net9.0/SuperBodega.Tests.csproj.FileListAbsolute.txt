@@ -100,3 +100,4 @@ C:\Users\GUS\Desktop\SuperBodega\tests\SuperBodega.Tests\obj\Debug\net9.0\refint
 C:\Users\GUS\Desktop\SuperBodega\tests\SuperBodega.Tests\obj\Debug\net9.0\SuperBodega.Tests.pdb
 C:\Users\GUS\Desktop\SuperBodega\tests\SuperBodega.Tests\obj\Debug\net9.0\SuperBodega.Tests.genruntimeconfig.cache
 C:\Users\GUS\Desktop\SuperBodega\tests\SuperBodega.Tests\obj\Debug\net9.0\ref\SuperBodega.Tests.dll
+C:\Users\GUS\Desktop\SuperBodega\tests\SuperBodega.Tests\obj\Debug\net9.0\SuperBodega.Tests.sourcelink.json

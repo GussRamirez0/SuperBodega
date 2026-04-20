@@ -9,3 +9,4 @@ C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBode
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\refint\SuperBodega.Core.dll
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.pdb
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\ref\SuperBodega.Core.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.sourcelink.json

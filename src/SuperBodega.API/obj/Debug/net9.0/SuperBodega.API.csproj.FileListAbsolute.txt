@@ -167,3 +167,4 @@ C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.API\obj\Debug\net9.0\ref\SuperB
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.API\obj\Debug\net9.0\SuperBodega.API.sourcelink.json

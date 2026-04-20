@@ -15,3 +15,4 @@ C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Infrastructure\obj\Debug\net9.0
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Infrastructure\obj\Debug\net9.0\SuperBodega.Infrastructure.pdb
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Infrastructure\obj\Debug\net9.0\SuperBodega.Infrastructure.genruntimeconfig.cache
 C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Infrastructure\obj\Debug\net9.0\ref\SuperBodega.Infrastructure.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Infrastructure\obj\Debug\net9.0\SuperBodega.Infrastructure.sourcelink.json
