@@ -55,3 +55,4 @@ public class CategoriasController : ControllerBase
     }
 }
 // GET endpoints
+// POST crear categorias
