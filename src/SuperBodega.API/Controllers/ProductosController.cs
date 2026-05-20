@@ -93,3 +93,4 @@ public class ProductosController : ControllerBase
         return NoContent();
     }
 }
+// DTO evitar ciclos
