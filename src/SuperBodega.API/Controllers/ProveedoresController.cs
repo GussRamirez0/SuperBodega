@@ -55,3 +55,4 @@ public class ProveedoresController : ControllerBase
         return NoContent();
     }
 }
+// PUT y DELETE
