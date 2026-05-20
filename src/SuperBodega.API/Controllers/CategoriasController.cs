@@ -54,3 +54,4 @@ public class CategoriasController : ControllerBase
         return NoContent();
     }
 }
+// GET endpoints
