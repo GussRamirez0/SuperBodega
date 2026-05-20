@@ -94,3 +94,4 @@ public class ProductosController : ControllerBase
     }
 }
 // DTO evitar ciclos
+// POST y PUT
