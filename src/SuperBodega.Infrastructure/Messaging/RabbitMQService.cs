@@ -6,25 +6,37 @@ namespace SuperBodega.Infrastructure.Messaging;
 
 public class RabbitMQService : IDisposable
 {
-    private readonly IConnection _connection;
-    private readonly IModel _channel;
+    private IConnection? _connection;
+    private IModel? _channel;
     private const string QueueName = "notificaciones-pedidos";
 
     public RabbitMQService()
     {
-        var factory = new ConnectionFactory
+        try
         {
-            HostName = "localhost",
-            UserName = "admin",
-            Password = "admin123"
-        };
-        _connection = factory.CreateConnection();
-        _channel = _connection.CreateModel();
-        _channel.QueueDeclare(queue: QueueName, durable: true, exclusive: false, autoDelete: false);
+            var factory = new ConnectionFactory
+            {
+                HostName = "localhost",
+                UserName = "admin",
+                Password = "admin123"
+            };
+            _connection = factory.CreateConnection();
+            _channel = _connection.CreateModel();
+            _channel.QueueDeclare(queue: QueueName, durable: true, exclusive: false, autoDelete: false);
+        }
+        catch (Exception)
+        {
+            // Si RabbitMQ no está disponible, la API sigue funcionando normalmente.
+            // Las notificaciones simplemente no se enviarán hasta que RabbitMQ esté listo.
+            _connection = null;
+            _channel = null;
+        }
     }
 
     public void PublicarNotificacion(NotificacionPedido notificacion)
     {
+        if (_channel == null) return; // RabbitMQ no disponible, se omite silenciosamente
+
         var mensaje = JsonSerializer.Serialize(notificacion);
         var body = Encoding.UTF8.GetBytes(mensaje);
         var properties = _channel.CreateBasicProperties();
