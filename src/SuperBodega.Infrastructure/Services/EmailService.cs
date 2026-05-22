@@ -33,7 +33,7 @@ public class EmailService
             "Entregado"  => $"<h2>Hola {nombre}</h2><p>Tu pedido <strong>#{ventaId}</strong> ha sido entregado exitosamente.</p><p>Gracias por tu compra en SuperBodega!</p>",
             _            => $"<h2>Hola {nombre}</h2><p>Tu pedido <strong>#{ventaId}</strong> tiene un nuevo estado: <strong>{estado}</strong></p>"
         };
-
+// Notificaciones por estado del pedido
         var mensaje = new MimeMessage();
         mensaje.From.Add(new MailboxAddress("SuperBodega", _email));
         mensaje.To.Add(new MailboxAddress(nombre, destinatario));
