@@ -12,6 +12,7 @@ public class EmailService
 
     public EmailService(IConfiguration configuration)
     {
+        // Credenciales leidas desde appsettings.json
         _email = configuration["Gmail:Email"] ?? "";
         _password = configuration["Gmail:Password"] ?? "";
     }
