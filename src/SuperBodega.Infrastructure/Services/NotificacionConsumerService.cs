@@ -60,6 +60,7 @@ public class NotificacionConsumerService : BackgroundService
             {
                 try
                 {
+                    // Manejo de scopes para procesamiento por mensaje
                     using var scope = _scopeFactory.CreateScope();
                     var emailService = scope.ServiceProvider.GetRequiredService<EmailService>();
                     await emailService.EnviarNotificacionPedidoAsync(
