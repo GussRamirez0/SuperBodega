@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 
 namespace SuperBodega.Infrastructure.Messaging;
-
+// Servicio encargado de administrar conexion RabbitMQ
 public class RabbitMQService : IDisposable
 {
     private readonly IConnection _connection;
