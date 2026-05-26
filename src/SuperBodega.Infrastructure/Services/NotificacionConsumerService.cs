@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.Json;
 
 namespace SuperBodega.Infrastructure.Services;
-
+// Servicio consumidor de mensajes RabbitMQ
 public class NotificacionConsumerService : BackgroundService
 {
     private readonly ILogger<NotificacionConsumerService> _logger;
