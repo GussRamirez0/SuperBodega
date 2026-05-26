@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 
 namespace SuperBodega.API.Controllers;
-
+// Endpoint asincrono de ventas
 [ApiController]
 [Route("api/async/[controller]")]
 public class VentasAsyncController : ControllerBase
