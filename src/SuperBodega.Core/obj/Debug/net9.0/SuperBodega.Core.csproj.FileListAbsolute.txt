@@ -1,0 +1,12 @@
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\bin\Debug\net9.0\SuperBodega.Core.deps.json
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\bin\Debug\net9.0\SuperBodega.Core.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\bin\Debug\net9.0\SuperBodega.Core.pdb
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.AssemblyInfoInputs.cache
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.AssemblyInfo.cs
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.csproj.CoreCompileInputs.cache
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.sourcelink.json
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\refint\SuperBodega.Core.dll
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\SuperBodega.Core.pdb
+C:\Users\GUS\Desktop\SuperBodega\src\SuperBodega.Core\obj\Debug\net9.0\ref\SuperBodega.Core.dll

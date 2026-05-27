@@ -19,3 +19,4 @@ public class Producto
     public ICollection<DetalleCompra> DetallesCompra { get; set; } = new List<DetalleCompra>();
     public ICollection<DetalleVenta> DetallesVenta { get; set; } = new List<DetalleVenta>();
 }
+// Entidad Producto

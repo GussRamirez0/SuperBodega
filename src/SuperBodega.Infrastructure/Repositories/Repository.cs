@@ -44,3 +44,5 @@ public class Repository<T> : IRepository<T> where T : class
         return true;
     }
 }
+// Repositorio base
+// Repositorio base
