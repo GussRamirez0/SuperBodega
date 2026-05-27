@@ -92,9 +92,14 @@ public class ComprasController : ControllerBase
                 });
             }
 
+
+            
             compra.Total = total;
             compra.Detalles = detalles;
             _context.Compras.Add(compra);
+
+            //transacción para asegurar que si algo falla,
+            //no se actualice el stock ni se cree la compra
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
             return CreatedAtAction(nameof(GetById), new { id = compra.Id }, compra);
