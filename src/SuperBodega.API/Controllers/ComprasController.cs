@@ -20,7 +20,7 @@ public class CompraDto
     public string Notas { get; set; } = string.Empty;
     public List<DetalleCompraDto> Detalles { get; set; } = new();
 }
-
+// este controlador maneja las compras, permite crear una compra con sus detalles, actualizarla, eliminarla y obtenerla por id o por proveedor. Al crear una compra, se actualiza el stock de los productos involucrados.
 [ApiController]
 [Route("api/[controller]")]
 public class ComprasController : ControllerBase
