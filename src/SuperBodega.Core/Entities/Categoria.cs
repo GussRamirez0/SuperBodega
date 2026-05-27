@@ -9,3 +9,4 @@ public class Categoria
 
     public ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }
+// Entidad Categoria

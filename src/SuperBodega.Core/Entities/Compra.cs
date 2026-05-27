@@ -14,3 +14,4 @@ public class Compra
 
     public ICollection<DetalleCompra> Detalles { get; set; } = new List<DetalleCompra>();
 }
+// Entidad Compra
