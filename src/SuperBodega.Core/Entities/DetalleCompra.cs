@@ -13,3 +13,4 @@ public class DetalleCompra
     public int ProductoId { get; set; }
     public Producto Producto { get; set; } = null!;
 }
+// Entidad DetalleCompra

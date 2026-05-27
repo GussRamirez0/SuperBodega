@@ -53,4 +53,4 @@ services:
     restart: always
 
 volumes:
-  sqlserver_data:
+  sqlserver_data:# Docker config
