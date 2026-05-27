@@ -1,0 +1,56 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: superbodega-db
+    environment:
+      SA_PASSWORD: "SuperBodega2024!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1434:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: superbodega-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: src/SuperBodega.API/Dockerfile
+    container_name: superbodega-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=SuperBodegaDB;User Id=sa;Password=SuperBodega2024!;TrustServerCertificate=True;
+      - Resend__ApiToken=TU_API_KEY_AQUI
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    restart: always
+
+  ecommerce:
+    build:
+      context: .
+      dockerfile: src/SuperBodega.ECommerce/Dockerfile
+    container_name: superbodega-ecommerce
+    ports:
+      - "8081:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=SuperBodegaDB;User Id=sa;Password=SuperBodega2024!;TrustServerCertificate=True;
+      - Resend__ApiToken=TU_API_KEY_AQUI
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    restart: always
+
+volumes:
+  sqlserver_data:# Docker config
