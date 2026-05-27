@@ -13,3 +13,4 @@ public class Cliente
 
     public ICollection<Venta> Ventas { get; set; } = new List<Venta>();
 }
+// Entidad Cliente
